@@ -1,0 +1,177 @@
+{
+  "cars": [
+    {
+      "id": 1,
+      "Name": "chevrolet chevelle malibu",
+      "Miles_per_Gallon": 18,
+      "Cylinders": 8,
+      "Displacement": 307,
+      "Horsepower": 130,
+      "Weight_in_lbs": 3504,
+      "Acceleration": 12,
+      "Year": "1970-01-01",
+      "Origin": "USA"
+    },
+    {
+      "id": 2,
+      "Name": "chevrolet chevelle malibu",
+      "Miles_per_Gallon": 18,
+      "Cylinders": 8,
+      "Displacement": 307,
+      "Horsepower": 130,
+      "Weight_in_lbs": 3504,
+      "Acceleration": 12,
+      "Year": "1970-01-01",
+      "Origin": "USA"
+    },
+    {
+      "id": 3,
+      "Name": "vw dasher (diesel)",
+      "Miles_per_Gallon": 43.4,
+      "Cylinders": 4,
+      "Displacement": 90,
+      "Horsepower": 48,
+      "Weight_in_lbs": 2335,
+      "Acceleration": 23.7,
+      "Year": "1980-01-01",
+      "Origin": "Europe"
+    },
+    {
+      "id": 4,
+      "Name": "vw dasher (diesel)",
+      "Miles_per_Gallon": 43.4,
+      "Cylinders": 4,
+      "Displacement": 90,
+      "Horsepower": 48,
+      "Weight_in_lbs": 2335,
+      "Acceleration": 23.7,
+      "Year": "1980-01-01",
+      "Origin": "Europe"
+    }
+  ],
+  "leads": [
+    {
+      "id": 1,
+      "carName": "chevrolet chevelle malibu",
+      "clientName": "John"
+    },
+    {
+      "id": 2,
+      "carName": "chevrolet chevelle malibu",
+      "clientName": "Doe"
+    },
+    {
+      "id": 3,
+      "carName": "vw dasher (diesel)",
+      "clientName": "Poe"
+    },
+    {
+      "id": 4,
+      "clientName": "a",
+      "carName": "a"
+    },
+    {
+      "id": 5,
+      "clientName": "d",
+      "carName": "d"
+    },
+    {
+      "id": 6,
+      "clientName": "e",
+      "carName": "e"
+    },
+    {
+      "id": 7,
+      "clientName": "asdsa",
+      "carName": "dsadsa"
+    },
+    {
+      "id": 8,
+      "clientName": "asdsad",
+      "carName": "dsadsa"
+    },
+    {
+      "id": 9,
+      "clientName": "asdsadd",
+      "carName": "dsadsa"
+    },
+    {
+      "id": 10,
+      "clientName": "Bogdan",
+      "carName": ""
+    },
+    {
+      "id": 11,
+      "clientName": "Bogdans",
+      "carName": ""
+    },
+    {
+      "id": 12,
+      "clientName": "Bogdansa",
+      "carName": ""
+    },
+    {
+      "id": 13,
+      "clientName": "aa",
+      "carName": ""
+    },
+    {
+      "id": 14,
+      "clientName": "aaa",
+      "carName": ""
+    },
+    {
+      "id": 15,
+      "clientName": "z",
+      "carName": "z"
+    },
+    {
+      "id": 16,
+      "clientName": "adsds",
+      "carName": "sds"
+    }
+  ],
+  "customers": [
+    {
+      "id": 1,
+      "name": "a"
+    },
+    {
+      "id": 2,
+      "name": "b"
+    },
+    {
+      "id": 3,
+      "name": "c"
+    },
+    {
+      "id": 4,
+      "name": "d"
+    },
+    {
+      "id": 5,
+      "name": "e"
+    },
+    {
+      "id": 6,
+      "name": "f"
+    },
+    {
+      "id": 7,
+      "name": "g"
+    },
+    {
+      "id": 8,
+      "name": "h"
+    },
+    {
+      "id": 9,
+      "name": "i"
+    },
+    {
+      "id": 10,
+      "name": "j"
+    }
+  ],
+  "top_cars": [1, 3]
+}

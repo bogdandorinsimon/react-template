@@ -1,0 +1,8 @@
+.vscode
+.idea
+.husky
+.git
+coverage
+dist
+node_modules
+vite.config.ts
