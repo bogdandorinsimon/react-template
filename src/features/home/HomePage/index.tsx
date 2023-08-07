@@ -1,10 +1,12 @@
 import WelcomeMessage from "components/WelcomeMessage";
 import { useTranslate } from "hooks/useTranslate";
 
-const Home = () => {
+const HomePage = () => {
   const { translate } = useTranslate();
 
-  return <WelcomeMessage message={translate("hello_text")} />;
+  return (
+    <WelcomeMessage message={translate("welcome_message", "Hello world!")} />
+  );
 };
 
-export default Home;
+export default HomePage;

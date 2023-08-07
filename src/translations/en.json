@@ -1,3 +1,27 @@
 {
-  "hello_text": "Hello world"
+  "app": {
+    "error": "An error has occurred, please retry later!",
+    "loading": "Loading..."
+  },
+  "customers": {
+    "previous": "Previous",
+    "next": "Next"
+  },
+  "lead": {
+    "fetch": "Fetch the leads",
+    "form": {
+      "add": "Add",
+      "car": "Car",
+      "client": "Client",
+      "year": "Year"
+    }
+  },
+  "welcome": {
+    "car_page": "Hello from the car page!",
+    "customers": "Hello from the customers page!",
+    "generic": "Hello world",
+    "inventory_page": "Hello from the inventory page!",
+    "leads": "Hello from the leads page!",
+    "top_cars": "Hello from the top cars page!"
+  }
 }

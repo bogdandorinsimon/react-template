@@ -30,7 +30,7 @@ const Header = () => {
   const navigate = useNavigate();
   const { theme, setTheme } = useThemeContext();
 
-  const handlePageClick = (page: any) => {
+  const handlePageClick = (page: Page) => {
     navigate(page.link);
   };
 

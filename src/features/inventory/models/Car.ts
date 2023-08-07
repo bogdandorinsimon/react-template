@@ -1,5 +1,5 @@
 export type Car = {
-  id: number;
+  id: string;
   Name: string;
   Miles_per_Gallon: number;
   Cylinders: number;

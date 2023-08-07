@@ -2,13 +2,9 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Stack, TextField } from "@mui/material";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
-import { useAddLeadData } from "features/leads/hooks/useLeadsData";
-
-type AddLeadFormValues = {
-  clientName: string;
-  carName: string;
-  year: Optional<number>;
-};
+import AddLeadFormValue from "features/leads/models/AddLeadFormValue";
+import useAddLead from "features/leads/mutations/useAddLead";
+import { useTranslate } from "hooks/useTranslate";
 
 type Props = {
   newId: number;
@@ -21,9 +17,10 @@ const leadFormSchema = yup.object({
 });
 
 const AddLeadForm = ({ newId }: Props) => {
-  const { mutate } = useAddLeadData();
+  const { translate } = useTranslate();
+  const { addLead } = useAddLead();
 
-  const form = useForm<AddLeadFormValues>({
+  const form = useForm<AddLeadFormValue>({
     defaultValues: {
       clientName: "",
       carName: ""
@@ -31,10 +28,10 @@ const AddLeadForm = ({ newId }: Props) => {
     resolver: yupResolver(leadFormSchema)
   });
   const { register, handleSubmit, formState } = form;
-  const { errors } = formState;
+  const { errors: formErrors } = formState;
 
-  const handleAddButtonClick = (formData: AddLeadFormValues) => {
-    mutate({
+  const handleAddButtonClick = (formData: AddLeadFormValue) => {
+    addLead({
       id: newId,
       clientName: formData.clientName,
       carName: formData.carName
@@ -45,28 +42,28 @@ const AddLeadForm = ({ newId }: Props) => {
     <form onSubmit={handleSubmit(handleAddButtonClick)}>
       <Stack spacing={2}>
         <TextField
-          label="Car"
+          label={translate("lead.form.car", "Car")}
           type="text"
           {...register("carName")}
-          error={!!errors.carName}
-          helperText={errors.carName?.message}
+          error={!!formErrors.carName}
+          helperText={formErrors.carName?.message}
         />
         <TextField
-          label="Client"
+          label={translate("lead.form.client", "Client")}
           type="text"
           {...register("clientName")}
-          error={!!errors.clientName}
-          helperText={errors.clientName?.message}
+          error={!!formErrors.clientName}
+          helperText={formErrors.clientName?.message}
         />
         <TextField
-          label="Year"
+          label={translate("lead.form.year", "Year")}
           type="number"
           {...register("year")}
-          error={!!errors.year}
-          helperText={errors.year?.message}
+          error={!!formErrors.year}
+          helperText={formErrors.year?.message}
         />
       </Stack>
-      <Button type="submit">Add</Button>
+      <Button type="submit">{translate("lead.form.add", "Add")}</Button>
     </form>
   );
 };

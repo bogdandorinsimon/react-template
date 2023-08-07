@@ -3,12 +3,12 @@ import { useLocation, useRoutes } from "react-router-dom";
 import ErrorBoundary from "components/ErrorBoundary";
 import PrivateRoute from "routes/PrivateRoute";
 
-const HomePage = lazy(() => import("features/home/Home"));
-const InventoryPage = lazy(() => import("features/inventory/Inventory"));
-const CarPage = lazy(() => import("features/inventory/Car"));
-const TopCarsPage = lazy(() => import("features/topCars/TopCars"));
-const LeadsPage = lazy(() => import("features/leads/Leads"));
-const CustomersPage = lazy(() => import("features/customers/Customers"));
+const HomePage = lazy(() => import("features/home/HomePage"));
+const InventoryPage = lazy(() => import("features/inventory/InventoryPage"));
+const CarPage = lazy(() => import("features/inventory/CarPage"));
+const TopCarsPage = lazy(() => import("features/topCars/TopCarsPage"));
+const LeadsPage = lazy(() => import("features/leads/LeadsPage"));
+const CustomersPage = lazy(() => import("features/customers/CustomersPage"));
 const PageNotFound = lazy(() => import("routes/PageNotFound"));
 
 export const ROUTER_PATH = {
