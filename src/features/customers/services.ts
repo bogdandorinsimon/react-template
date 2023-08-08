@@ -1,6 +1,6 @@
+import { QueryOptions } from "models/query";
 import Http from "api/http";
-import { QueryOptions } from "api/models/QueryOptions";
-import { Customer } from "../models/Customer";
+import { Customer } from "./models";
 
 const CUSTOMERS_SERVICE_ROUTES = {
   customers: (queryOptions: QueryOptions) =>

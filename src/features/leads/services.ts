@@ -1,5 +1,5 @@
 import Http from "api/http";
-import { Lead } from "../models/Lead";
+import { Lead } from "./models";
 
 const LEADS_SERVICE_ROUTES = {
   leads: () => "leads"

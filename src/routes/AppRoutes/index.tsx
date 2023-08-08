@@ -1,12 +1,11 @@
+import ErrorBoundary from "layout/ErrorBoundary";
 import { Suspense, lazy } from "react";
 import { useLocation, useRoutes } from "react-router-dom";
-import ErrorBoundary from "components/ErrorBoundary";
 import PrivateRoute from "routes/PrivateRoute";
 
 const HomePage = lazy(() => import("features/home/HomePage"));
 const InventoryPage = lazy(() => import("features/inventory/InventoryPage"));
 const CarPage = lazy(() => import("features/inventory/CarPage"));
-const TopCarsPage = lazy(() => import("features/topCars/TopCarsPage"));
 const LeadsPage = lazy(() => import("features/leads/LeadsPage"));
 const CustomersPage = lazy(() => import("features/customers/CustomersPage"));
 const PageNotFound = lazy(() => import("routes/PageNotFound"));
@@ -15,7 +14,6 @@ export const ROUTER_PATH = {
   HOME: "/",
   INVENTORY: "/inventory",
   CAR: "/inventory/:carId",
-  TOP_CARS: "/top_cars",
   LEADS: "/leads",
   CUSTOMERS: "/customers",
   NOT_FOUND: "*"
@@ -36,10 +34,6 @@ const AppRoutes = () => {
     {
       path: ROUTER_PATH.CAR,
       element: <PrivateRoute component={<CarPage />} />
-    },
-    {
-      path: ROUTER_PATH.TOP_CARS,
-      element: <PrivateRoute component={<TopCarsPage />} />
     },
     {
       path: ROUTER_PATH.LEADS,

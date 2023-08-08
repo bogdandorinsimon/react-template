@@ -1,5 +1,5 @@
-import { Car } from "features/inventory/models/Car";
-import { QueryOptions } from "./models/QueryOptions";
+import { Car } from "features/inventory/models";
+import { QueryOptions } from "../models/query";
 
 export const BASE_URL = "http://localhost:4000";
 
@@ -14,5 +14,5 @@ export const LEADS_KEYS = {
 
 export const CUSTOMERS_KEYS = {
   all: ["customers"],
-  list: (queryOptions: QueryOptions) => [CUSTOMERS_KEYS.all, queryOptions]
+  list: (queryOptions: QueryOptions) => [...CUSTOMERS_KEYS.all, queryOptions]
 };

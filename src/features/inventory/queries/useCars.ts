@@ -1,8 +1,8 @@
 import { AxiosError } from "axios";
 import { useQuery } from "react-query";
 import { INVENTORY_KEYS } from "api/constants";
-import { Car } from "../models/Car";
-import { getCars } from "../services/carsService";
+import { Car } from "../models";
+import { getCars } from "../services";
 
 const useCars = () => {
   const {

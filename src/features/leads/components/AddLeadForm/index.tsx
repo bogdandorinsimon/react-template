@@ -2,7 +2,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Stack, TextField } from "@mui/material";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
-import AddLeadFormValue from "features/leads/models/AddLeadFormValue";
+import { AddLeadFormValue } from "features/leads/models";
 import useAddLead from "features/leads/mutations/useAddLead";
 import { useTranslate } from "hooks/useTranslate";
 

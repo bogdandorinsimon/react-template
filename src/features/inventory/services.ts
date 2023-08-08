@@ -1,5 +1,5 @@
 import Http from "api/http";
-import { Car } from "../models/Car";
+import { Car } from "./models";
 
 const INVENTORY_SERVICE_ROUTES = {
   cars: () => "cars",

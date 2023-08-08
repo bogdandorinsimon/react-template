@@ -1,8 +1,8 @@
 import { AxiosError } from "axios";
 import { useQuery } from "react-query";
 import { LEADS_KEYS } from "api/constants";
-import { Lead } from "../models/Lead";
-import { getLeads } from "../services/leadsService";
+import { Lead } from "../models";
+import { getLeads } from "../services";
 
 const useLeadNames = () => {
   const {

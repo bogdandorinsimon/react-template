@@ -1,7 +1,7 @@
 import { Button, Typography } from "@mui/material";
 import { useState } from "react";
 import WelcomeMessage from "components/WelcomeMessage";
-import { Customer } from "features/customers/models/Customer";
+import { Customer } from "features/customers/models";
 import { useTranslate } from "hooks/useTranslate";
 import useCustomers from "../queries/useCustomers";
 

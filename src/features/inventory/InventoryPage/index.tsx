@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import WelcomeMessage from "components/WelcomeMessage";
 import { useTranslate } from "hooks/useTranslate";
 import { ROUTER_PATH } from "routes/AppRoutes";
-import { Car } from "../models/Car";
+import { Car } from "../models";
 import useCars from "../queries/useCars";
 
 const InventoryPage = () => {

@@ -1,8 +1,8 @@
 import { AxiosError } from "axios";
 import { useMutation, useQueryClient } from "react-query";
 import { LEADS_KEYS } from "api/constants";
-import { Lead } from "../models/Lead";
-import { createLead } from "../services/leadsService";
+import { Lead } from "../models";
+import { createLead } from "../services";
 
 const useAddLead = () => {
   const queryClient = useQueryClient();

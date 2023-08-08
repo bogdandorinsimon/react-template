@@ -64,16 +64,6 @@
       "id": 3,
       "carName": "vw dasher (diesel)",
       "clientName": "Poe"
-    },
-    {
-      "id": 4,
-      "clientName": "test",
-      "carName": "test"
-    },
-    {
-      "id": 5,
-      "clientName": "dsad",
-      "carName": "as"
     }
   ],
   "customers": [
@@ -118,8 +108,5 @@
       "name": "j"
     }
   ],
-  "top_cars": [
-    1,
-    3
-  ]
+  "top_cars": [1, 3]
 }

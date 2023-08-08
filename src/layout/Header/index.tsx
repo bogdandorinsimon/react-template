@@ -1,7 +1,7 @@
 import { AppBar, Box, Button, Toolbar, Typography } from "@mui/material";
+import { Page } from "layout/Header/model/Page";
 import { useNavigate } from "react-router-dom";
 import AppLogo from "assets/icons/svg/AppLogo";
-import { Page } from "components/Header/model/Page";
 import useThemeContext from "context/ThemeContextProvider/useThemeContext";
 import { ROUTER_PATH } from "routes/AppRoutes";
 import sxStyles from "./styles";
@@ -14,10 +14,6 @@ const PAGES: Page[] = [
   {
     title: "Leads",
     link: ROUTER_PATH.LEADS
-  },
-  {
-    title: "Top Cars",
-    link: ROUTER_PATH.TOP_CARS
   },
   {
     title: "Customers",

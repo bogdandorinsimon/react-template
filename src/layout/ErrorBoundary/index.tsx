@@ -1,5 +1,5 @@
+import ErrorPage from "layout/ErrorPage";
 import { Component, ReactNode } from "react";
-import ErrorPage from "components/ErrorPage";
 
 interface ErrorBoundaryProps {
   children: ReactNode;
