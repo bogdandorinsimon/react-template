@@ -14,9 +14,11 @@
     "^context/(.*)$",
     "^features/(.*)$",
     "^hooks/(.*)$",
+    "^layout/(.*)$",
+    "^models/(.*)$",
     "^routes/(.*)$",
     "^translations/(.*)$",
-    "^[./(.*)$]",
+    "^[./]",
     "./styles"
   ],
   "overrides": [

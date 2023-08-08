@@ -1,8 +1,8 @@
 import { AppBar, Box, Button, Toolbar, Typography } from "@mui/material";
-import { Page } from "layout/Header/model/Page";
 import { useNavigate } from "react-router-dom";
 import AppLogo from "assets/icons/svg/AppLogo";
 import useThemeContext from "context/ThemeContextProvider/useThemeContext";
+import { Page } from "models/layout";
 import { ROUTER_PATH } from "routes/AppRoutes";
 import sxStyles from "./styles";
 

@@ -1,5 +1,5 @@
 import { Car } from "features/inventory/models";
-import { QueryOptions } from "../models/query";
+import { QueryOptions } from "models/query";
 
 export const BASE_URL = "http://localhost:4000";
 

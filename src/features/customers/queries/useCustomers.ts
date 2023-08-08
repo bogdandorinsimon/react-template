@@ -1,8 +1,8 @@
 import { AxiosError } from "axios";
-import { QueryOptions } from "models/query";
 import { useQuery } from "react-query";
 import { CUSTOMERS_KEYS } from "api/constants";
 import { Customer } from "features/customers/models";
+import { QueryOptions } from "models/query";
 import getCustomers from "../services";
 
 const useCustomers = (queryOptions: QueryOptions) => {
