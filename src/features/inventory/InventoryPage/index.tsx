@@ -45,9 +45,13 @@ const InventoryPage = () => {
     }
 
     return cars.map((car: Car) => (
-      <Grid container alignItems="center" justifyContent="space-around">
+      <Grid
+        key={car.id}
+        container
+        alignItems="center"
+        justifyContent="space-around"
+      >
         <Typography
-          key={car.id}
           onClick={() => {
             handleCarItemClick(car);
           }}

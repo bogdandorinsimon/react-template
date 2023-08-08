@@ -37,7 +37,7 @@ export const ConfirmationDialogProvider = ({
   const openDialog: OpenDialogSignature = useCallback((options, res) => {
     onOpen();
     setDialogOptions(options);
-    setCallbackFunction(res);
+    setCallbackFunction(() => res);
   }, []);
 
   const handleConfirm = () => {
