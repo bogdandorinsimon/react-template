@@ -3,11 +3,11 @@ import WelcomeMessage from "components/WelcomeMessage";
 import AddLeadForm from "features/leads/components/AddLeadForm";
 import { useTranslate } from "hooks/useTranslate";
 import PageWrapper from "layout/PageWrapper";
+import { PageName } from "models/layout";
 import useLeadNames from "../queries/useLeadNames";
 
 const LeadsPage = () => {
   const { translate } = useTranslate();
-
   const { leads, isLoading, isError, error, refetch } = useLeadNames();
 
   const handleFetchButtonClick = () => {
@@ -27,7 +27,9 @@ const LeadsPage = () => {
   return (
     <PageWrapper isLoading={isLoading} isError={isError} error={error}>
       <WelcomeMessage
-        message={translate("welcome.leads", "Hello from the leads page!")}
+        message={translate("welcome", "Hello from the leads page!", {
+          page: PageName.LEADS_PAGE
+        })}
       />
       <AddLeadForm newId={leads ? leads.length! + 1 : 0} />
       <Button onClick={handleFetchButtonClick}>

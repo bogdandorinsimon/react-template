@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import { ThemeContext } from ".";
+import { ThemeContext } from "./index";
 
-const useThemeContext = () => {
+const useTheme = () => {
   const context = useContext(ThemeContext);
   // prettier-ignore
   const ERROR_MSG = "BulkUploadContext must be used within a provider, consider wrapping a parent with 'BulkUploadContextProvider'";
@@ -13,4 +13,4 @@ const useThemeContext = () => {
   return context;
 };
 
-export default useThemeContext;
+export default useTheme;

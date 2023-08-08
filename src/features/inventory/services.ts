@@ -17,3 +17,9 @@ export const getCar = (carId: Car["id"]): Promise<Car> => {
     (response) => response.data
   );
 };
+
+export const deleteCar = (carId: string): Promise<Car> => {
+  return Http.delete<Car>(INVENTORY_SERVICE_ROUTES.car(carId)).then(
+    (response) => response.data
+  );
+};

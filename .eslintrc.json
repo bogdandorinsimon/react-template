@@ -19,6 +19,7 @@
     "@typescript-eslint/quotes": [2, "double", { "avoidEscape": true }],
     "consistent-return": "off",
     "import/no-extraneous-dependencies": "off",
+    "import/prefer-default-export": "off",
     "quotes": [2, "double", { "avoidEscape": true }],
     "react/function-component-definition": [
       2,

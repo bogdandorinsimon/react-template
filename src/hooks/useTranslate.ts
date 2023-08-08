@@ -3,7 +3,7 @@ import { useIntl } from "react-intl";
 
 export type TranslateFnSignature = (
   messageId: string,
-  defaultMessage?: string,
+  defaultMessage: string,
   optionalValues?: Parameters<ReturnType<typeof useIntl>["formatMessage"]>["1"]
 ) => string;
 

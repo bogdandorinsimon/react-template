@@ -11,12 +11,11 @@ export const ThemeContext = createContext<ThemeContextValue>({
   setTheme: () => {}
 });
 
-type ThemeContextProviderProps = {
+type Props = {
   children: ReactNode;
 };
-export const ThemeContextProvider = ({
-  children
-}: ThemeContextProviderProps): JSX.Element => {
+
+export const ThemeProvider = ({ children }: Props): JSX.Element => {
   const [theme, setTheme] = useState<Theme>("light");
 
   const themeContextValue = useMemo(

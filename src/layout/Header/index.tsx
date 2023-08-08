@@ -1,22 +1,25 @@
 import { AppBar, Box, Button, Toolbar, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import AppLogo from "assets/icons/svg/AppLogo";
-import useThemeContext from "context/ThemeContextProvider/useThemeContext";
-import { Page } from "models/layout";
+import useThemeContext from "context/ThemeProvider/useTheme";
+import { PageName, Page } from "models/layout";
 import { ROUTER_PATH } from "routes/AppRoutes";
 import sxStyles from "./styles";
 
 const PAGES: Page[] = [
   {
     title: "Inventory",
+    name: PageName.INVENTORY_PAGE,
     link: ROUTER_PATH.INVENTORY
   },
   {
     title: "Leads",
+    name: PageName.LEADS_PAGE,
     link: ROUTER_PATH.LEADS
   },
   {
     title: "Customers",
+    name: PageName.CUSTOMERS_PAGE,
     link: ROUTER_PATH.CUSTOMERS
   }
 ];

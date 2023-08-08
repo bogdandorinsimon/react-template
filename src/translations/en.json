@@ -7,6 +7,14 @@
     "previous": "Previous",
     "next": "Next"
   },
+  "inventory": {
+    "delete": {
+      "title": "Delete car",
+      "description": "Are you sure you want to delete {car}?",
+      "confirmText": "Delete",
+      "cancelText": "Close"
+    }
+  },
   "lead": {
     "fetch": "Fetch the leads",
     "form": {
@@ -16,12 +24,5 @@
       "year": "Year"
     }
   },
-  "welcome": {
-    "car_page": "Hello from the car page!",
-    "customers": "Hello from the customers page!",
-    "generic": "Hello world",
-    "inventory_page": "Hello from the inventory page!",
-    "leads": "Hello from the leads page!",
-    "top_cars": "Hello from the top cars page!"
-  }
+  "welcome": "Hello {page, select, CAR_PAGE {car} CUSTOMERS_PAGE {customers} INVENTORY_PAGE {inventory} LEADS_PAGE {leads} other {world} }!"
 }

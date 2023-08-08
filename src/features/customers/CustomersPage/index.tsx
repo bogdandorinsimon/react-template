@@ -4,6 +4,7 @@ import WelcomeMessage from "components/WelcomeMessage";
 import { Customer } from "features/customers/models";
 import { useTranslate } from "hooks/useTranslate";
 import PageWrapper from "layout/PageWrapper";
+import { PageName } from "models/layout";
 import useCustomers from "../queries/useCustomers";
 
 const PAGE_SIZE = 2;
@@ -28,10 +29,9 @@ const CustomersPage = () => {
   return (
     <PageWrapper isLoading={isLoading} isError={isError} error={error}>
       <WelcomeMessage
-        message={translate(
-          "welcome.customers",
-          "Hello from the customers page!"
-        )}
+        message={translate("welcome", "Hello from the customers page!", {
+          page: PageName.CUSTOMERS_PAGE
+        })}
       />
       {customers?.map((customer: Customer) => (
         <Typography key={customer.id}>{customer.name}</Typography>
