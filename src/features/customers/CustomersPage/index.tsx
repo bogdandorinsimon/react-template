@@ -3,6 +3,7 @@ import { useState } from "react";
 import WelcomeMessage from "components/WelcomeMessage";
 import { Customer } from "features/customers/models";
 import { useTranslate } from "hooks/useTranslate";
+import PageWrapper from "layout/PageWrapper";
 import useCustomers from "../queries/useCustomers";
 
 const PAGE_SIZE = 2;
@@ -16,27 +17,6 @@ const CustomersPage = () => {
     pageSize: PAGE_SIZE
   });
 
-  if (isLoading) {
-    return (
-      <Typography variant="h2">
-        {translate("app.loading", "Loading...")}
-      </Typography>
-    );
-  }
-
-  if (isError) {
-    return (
-      <Typography variant="h2">
-        {error
-          ? error.message
-          : translate(
-              "app.error",
-              "An error has occurred, please retry later!"
-            )}
-      </Typography>
-    );
-  }
-
   const handlePreviousClick = () => {
     setPageNumber(pageNumber - 1);
   };
@@ -46,7 +26,7 @@ const CustomersPage = () => {
   };
 
   return (
-    <>
+    <PageWrapper isLoading={isLoading} isError={isError} error={error}>
       <WelcomeMessage
         message={translate(
           "welcome.customers",
@@ -62,7 +42,7 @@ const CustomersPage = () => {
       <Button onClick={handleNextClick} disabled={pageNumber === 5}>
         {translate("customers.next", "Next")}
       </Button>
-    </>
+    </PageWrapper>
   );
 };
 

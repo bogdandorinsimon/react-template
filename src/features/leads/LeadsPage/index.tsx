@@ -2,6 +2,7 @@ import { Button, Typography } from "@mui/material";
 import WelcomeMessage from "components/WelcomeMessage";
 import AddLeadForm from "features/leads/components/AddLeadForm";
 import { useTranslate } from "hooks/useTranslate";
+import PageWrapper from "layout/PageWrapper";
 import useLeadNames from "../queries/useLeadNames";
 
 const LeadsPage = () => {
@@ -14,27 +15,6 @@ const LeadsPage = () => {
   };
 
   const renderLeads = () => {
-    if (isLoading) {
-      return (
-        <Typography variant="h2">
-          {translate("app.loading", "Loading...")}
-        </Typography>
-      );
-    }
-
-    if (isError) {
-      return (
-        <Typography variant="h3">
-          {error
-            ? error.message
-            : translate(
-                "app.error",
-                "An error has occurred, please retry later!"
-              )}
-        </Typography>
-      );
-    }
-
     if (!leads || !leads.length) {
       return null;
     }
@@ -45,7 +25,7 @@ const LeadsPage = () => {
   };
 
   return (
-    <>
+    <PageWrapper isLoading={isLoading} isError={isError} error={error}>
       <WelcomeMessage
         message={translate("welcome.leads", "Hello from the leads page!")}
       />
@@ -54,7 +34,7 @@ const LeadsPage = () => {
         <Typography>{translate("leads.fetch", "Fetch the leads")}</Typography>
       </Button>
       {renderLeads()}
-    </>
+    </PageWrapper>
   );
 };
 

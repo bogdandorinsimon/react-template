@@ -2,6 +2,7 @@ import { Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import WelcomeMessage from "components/WelcomeMessage";
 import { useTranslate } from "hooks/useTranslate";
+import PageWrapper from "layout/PageWrapper";
 import { ROUTER_PATH } from "routes/AppRoutes";
 import { Car } from "../models";
 import useCars from "../queries/useCars";
@@ -15,27 +16,6 @@ const InventoryPage = () => {
   const handleCarItemClick = (car: Car) => {
     navigate(ROUTER_PATH.CAR.replace(":carId", car.id));
   };
-
-  if (isLoading) {
-    return (
-      <Typography variant="h2">
-        {translate("app.loading", "Loading...")}
-      </Typography>
-    );
-  }
-
-  if (isError) {
-    return (
-      <Typography variant="h3">
-        {error
-          ? error.message
-          : translate(
-              "app.error",
-              "An error has occurred, please retry later!"
-            )}
-      </Typography>
-    );
-  }
 
   const renderCarsList = () => {
     if (!cars || !cars.length) {
@@ -55,7 +35,7 @@ const InventoryPage = () => {
   };
 
   return (
-    <>
+    <PageWrapper isLoading={isLoading} isError={isError} error={error}>
       <WelcomeMessage
         message={translate(
           "welcome.inventory_page",
@@ -63,7 +43,7 @@ const InventoryPage = () => {
         )}
       />
       {renderCarsList()}
-    </>
+    </PageWrapper>
   );
 };
 

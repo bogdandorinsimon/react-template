@@ -1,6 +1,6 @@
-import ErrorBoundary from "layout/ErrorBoundary";
 import { Suspense, lazy } from "react";
 import { useLocation, useRoutes } from "react-router-dom";
+import ErrorBoundary from "layout/ErrorBoundary";
 import PrivateRoute from "routes/PrivateRoute";
 
 const HomePage = lazy(() => import("features/home/HomePage"));
