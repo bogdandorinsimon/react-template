@@ -30,8 +30,8 @@ const InventoryPage = () => {
         "Are you sure you want to delete this car?",
         { car: car.Name }
       ),
-      confirmText: translate("inventory.delete.confirmText", "Delete"),
-      cancelText: translate("inventory.delete.cancelText", "Close")
+      confirmText: translate("inventory.delete.confirm_text", "Delete"),
+      cancelText: translate("inventory.delete.cancel_text", "Close")
     });
 
     if (shouldDelete) {

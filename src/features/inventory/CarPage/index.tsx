@@ -3,6 +3,7 @@ import WelcomeMessage from "components/WelcomeMessage";
 import { useTranslate } from "hooks/useTranslate";
 import PageWrapper from "layout/PageWrapper";
 import { PageName } from "models/layout";
+import { getPowerToWeightRatio } from "../helpers";
 import useCar from "../queries/useCar";
 
 const CarPage = () => {
@@ -14,7 +15,22 @@ const CarPage = () => {
       return null;
     }
 
-    return <Typography>{car.Name}</Typography>;
+    const powerToWeight = getPowerToWeightRatio(car);
+
+    return (
+      <>
+        <Typography>{car.Name}</Typography>
+        {powerToWeight && (
+          <Typography>
+            {translate(
+              "car.power_to_weight_ratio",
+              "Power to weight ratio {powerToWeight, number}",
+              { powerToWeight }
+            )}
+          </Typography>
+        )}
+      </>
+    );
   };
 
   return (

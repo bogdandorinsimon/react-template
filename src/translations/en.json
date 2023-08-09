@@ -3,6 +3,9 @@
     "error": "An error has occurred, please retry later!",
     "loading": "Loading..."
   },
+  "car": {
+    "power_to_weight_ratio": "Power-to-weight ratio: {powerToWeight, number}."
+  },
   "customers": {
     "previous": "Previous",
     "next": "Next"
@@ -10,9 +13,9 @@
   "inventory": {
     "delete": {
       "title": "Delete car",
-      "description": "Are you sure you want to delete {car}?",
-      "confirmText": "Delete",
-      "cancelText": "Close"
+      "description": "Are you sure you want to delete {car, string}?",
+      "confirm_text": "Delete",
+      "cancel_text": "Close"
     }
   },
   "lead": {
