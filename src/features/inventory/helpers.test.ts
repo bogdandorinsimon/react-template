@@ -1,10 +1,10 @@
+import { describe, it, expect } from "vitest";
 import { getPowerToWeightRatio } from "./helpers";
 import { CAR, INVALID_CAR } from "./mock";
 
 describe("getPowerToWeightRatio", () => {
   it("handles zero weight gracefully", () => {
     const calculatedRatio = getPowerToWeightRatio(INVALID_CAR);
-
     expect(calculatedRatio).toBeUndefined();
   });
 
