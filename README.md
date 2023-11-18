@@ -16,6 +16,8 @@ React template designed to serve as a quickstarter for future projects, provindi
 - **[Husky](https://typicode.github.io/husky/):** Setting up pre-commit hooks to run commitlint, lint, and prettier on staged files;
 - **[Storybook](https://storybook.js.org/):** Building a UI catalog to showcase and test UI components;
 - **[JSON-server](https://github.com/typicode/json-server):** For mocking REST APIs if necessary;
+- **[react-intl](https://formatjs.io/docs/react-intl/):** For internationalization;
+- **Confirmation dialog and snackbar implementation with Context API:** 
 
 ## Getting Started
 
