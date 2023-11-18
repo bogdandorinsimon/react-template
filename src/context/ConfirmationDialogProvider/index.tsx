@@ -1,14 +1,7 @@
-import { ModalProps } from "@mui/material";
 import { ReactNode, createContext, useCallback, useState } from "react";
+import { ConfirmationDialog } from "components/ConfirmationDialog";
 import { useDisclosure } from "hooks/useDisclosure";
-import ConfirmationDialog from "layout/ConfirmationDialog";
-
-export type DialogOptions = {
-  title?: ModalProps["title"];
-  description?: ModalProps["content"];
-  confirmText?: string;
-  cancelText?: string;
-};
+import { DialogOptions } from "models/components";
 
 type CallbackFunctionType = (value: boolean | PromiseLike<boolean>) => void;
 

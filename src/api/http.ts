@@ -1,6 +1,12 @@
-import axios from "axios";
+import axios, { AxiosInstance } from "axios";
 import { BASE_URL } from "./constants";
 
-const Http = axios.create({ baseURL: BASE_URL });
+export type Api = {
+  base: AxiosInstance;
+};
 
-export default Http;
+export const Http: Api = {
+  base: axios.create({
+    baseURL: BASE_URL
+  })
+};

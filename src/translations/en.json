@@ -1,31 +1,12 @@
 {
-  "app": {
-    "error": "An error has occurred, please retry later!",
-    "loading": "Loading..."
+  "common": {
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "error": "An error occurred!",
+    "hello_world": "Hello World!",
+    "page_not_found": "Page not found!"
   },
-  "car": {
-    "power_to_weight_ratio": "Power-to-weight ratio: {powerToWeight, number}."
-  },
-  "customers": {
-    "previous": "Previous",
-    "next": "Next"
-  },
-  "inventory": {
-    "delete": {
-      "title": "Delete car",
-      "description": "Are you sure you want to delete {car, string}?",
-      "confirm_text": "Delete",
-      "cancel_text": "Close"
-    }
-  },
-  "lead": {
-    "fetch": "Fetch the leads",
-    "form": {
-      "add": "Add",
-      "car": "Car",
-      "client": "Client",
-      "year": "Year"
-    }
-  },
-  "welcome": "Hello {page, select, CAR_PAGE {car} CUSTOMERS_PAGE {customers} INVENTORY_PAGE {inventory} LEADS_PAGE {leads} other {world} }!"
+  "products": {
+    "title": "Products"
+  }
 }

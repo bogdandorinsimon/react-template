@@ -1,90 +1,33 @@
-import { AppBar, Box, Button, Toolbar, Typography } from "@mui/material";
-import { useNavigate } from "react-router-dom";
-import AppLogo from "assets/icons/svg/AppLogo";
-import useThemeContext from "context/ThemeProvider/useTheme";
-import { PageName, Page } from "models/layout";
-import { ROUTER_PATH } from "routes/AppRoutes";
-import sxStyles from "./styles";
+import { AppBar, Box, Toolbar, Typography } from "@mui/material";
+import { usePageTitle } from "hooks/usePageTitle";
+import { sxStyles } from "./styles";
 
-const PAGES: Page[] = [
-  {
-    title: "Inventory",
-    name: PageName.INVENTORY_PAGE,
-    link: ROUTER_PATH.INVENTORY
-  },
-  {
-    title: "Leads",
-    name: PageName.LEADS_PAGE,
-    link: ROUTER_PATH.LEADS
-  },
-  {
-    title: "Customers",
-    name: PageName.CUSTOMERS_PAGE,
-    link: ROUTER_PATH.CUSTOMERS
-  }
-];
-
-const Header = () => {
+export const Header = () => {
   const classes = sxStyles();
-  const navigate = useNavigate();
-  const { theme, setTheme } = useThemeContext();
-
-  const handlePageClick = (page: Page) => {
-    navigate(page.link);
-  };
-
-  const renderLogoTitle = () => (
-    <>
-      <AppLogo />
-      <Typography
-        variant="h6"
-        noWrap
-        component="a"
-        onClick={() => {
-          navigate(ROUTER_PATH.HOME);
-        }}
-        sx={classes.logoText}
-      >
-        react-query
-      </Typography>
-    </>
-  );
-
-  const renderPageItems = () =>
-    PAGES.map((page) => (
-      <Button
-        key={page.title}
-        onClick={() => handlePageClick(page)}
-        sx={classes.pageButton}
-      >
-        {page.title}
-      </Button>
-    ));
-
-  const renderThemeSwitch = () => (
-    <Button
-      onClick={() => {
-        const newTheme = theme === "light" ? "dark" : "light";
-
-        setTheme(newTheme);
-      }}
-      sx={classes.pageButton}
-    >
-      {theme}
-    </Button>
-  );
+  const pageTitle = usePageTitle();
 
   return (
-    <AppBar position="static">
-      <Box sx={classes.container}>
-        <Toolbar disableGutters>
-          {renderLogoTitle()}
-          {renderPageItems()}
-          {renderThemeSwitch()}
-        </Toolbar>
-      </Box>
+    <AppBar position="relative" sx={classes.appBar}>
+      <Toolbar disableGutters sx={classes.toolbar}>
+        <Box
+          display="flex"
+          flexDirection="row"
+          justifyContent="space-between"
+          alignItems="center"
+          sx={classes.container}
+        >
+          <Box
+            display="flex"
+            flexDirection="row"
+            justifyContent="row"
+            alignItems="center"
+          >
+            <Typography variant="h2" sx={classes.title} color="text.primary">
+              {pageTitle}
+            </Typography>
+          </Box>
+        </Box>
+      </Toolbar>
     </AppBar>
   );
 };
-
-export default Header;

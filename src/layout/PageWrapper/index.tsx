@@ -1,17 +1,17 @@
 import { Box, Typography } from "@mui/material";
-import { AxiosError } from "axios";
 import { ReactNode } from "react";
+import { LoadingIndicator } from "components/LoadingIndicator";
 import { useTranslate } from "hooks/useTranslate";
-import sxStyles from "./styles";
+import { sxStyles } from "./styles";
 
 type Props = {
   children: ReactNode;
   isLoading?: boolean;
   isError?: boolean;
-  error?: Nullable<AxiosError>;
+  error?: Nullable<string>;
 };
 
-const PageWrapper = ({
+export const PageWrapper = ({
   children,
   isLoading = false,
   isError = false,
@@ -20,28 +20,25 @@ const PageWrapper = ({
   const { translate } = useTranslate();
   const classes = sxStyles();
 
-  if (isLoading) {
-    return (
-      <Typography variant="h2">
-        {translate("app.loading", "Loading...")}
-      </Typography>
-    );
-  }
+  const renderPageContent = () => {
+    if (isLoading) {
+      return <LoadingIndicator />;
+    }
 
-  if (isError) {
-    return (
-      <Typography variant="h2">
-        {error
-          ? error.message
-          : translate(
+    if (isError) {
+      return (
+        <Typography variant="h2">
+          {error ??
+            translate(
               "app.error",
               "An error has occurred, please retry later!"
             )}
-      </Typography>
-    );
-  }
+        </Typography>
+      );
+    }
 
-  return <Box sx={classes.root}>{children}</Box>;
+    return children;
+  };
+
+  return <Box sx={classes.container}>{renderPageContent()}</Box>;
 };
-
-export default PageWrapper;

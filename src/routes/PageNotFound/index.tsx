@@ -1,7 +1,14 @@
-import WelcomeMessage from "components/WelcomeMessage";
+import { Typography } from "@mui/material";
+import { useTranslate } from "hooks/useTranslate";
 
 const PageNotFound = () => {
-  return <WelcomeMessage message="Page not found!" />;
+  const { translate } = useTranslate();
+
+  return (
+    <Typography>
+      {translate("common.page_not_found", "Page not found!")}
+    </Typography>
+  );
 };
 
 export default PageNotFound;

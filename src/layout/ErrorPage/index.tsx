@@ -1,7 +1,10 @@
-import WelcomeMessage from "components/WelcomeMessage";
+import { Typography } from "@mui/material";
+import { useTranslate } from "hooks/useTranslate";
 
-const ErrorPage = () => {
-  return <WelcomeMessage message="An error occured!" />;
+export const ErrorPage = () => {
+  const { translate } = useTranslate();
+
+  return (
+    <Typography>{translate("common.error", "An error occurred!")} </Typography>
+  );
 };
-
-export default ErrorPage;

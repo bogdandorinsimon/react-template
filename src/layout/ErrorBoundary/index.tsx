@@ -1,16 +1,16 @@
 import { Component, ReactNode } from "react";
-import ErrorPage from "layout/ErrorPage";
+import { ErrorPage } from "layout/ErrorPage";
 
-interface ErrorBoundaryProps {
+type Props = {
   children: ReactNode;
-}
+};
 
-interface ErrorBoundaryState {
+type State = {
   hasError: boolean;
-}
+};
 
-class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
-  constructor(props: ErrorBoundaryProps) {
+export class ErrorBoundary extends Component<Props, State> {
+  constructor(props: Props) {
     super(props);
     this.state = { hasError: false };
   }
@@ -30,5 +30,3 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
     return children;
   }
 }
-
-export default ErrorBoundary;

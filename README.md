@@ -11,12 +11,14 @@ React template designed to serve as a quickstarter for future projects, provindi
 - **[Vite](https://vitejs.dev/):** A fast build tool that provides an optimized development experience;
 - **[Vitest](https://vitest.dev/):** Integrated with React Testing Library for unit tests;
 - **[MUI (Material-UI)](https://mui.com/):** Leveraging out-of-the-box components for rapid development;
+- **[react-hook-form](https://react-hook-form.com/) and [yup](https://github.com/jquense/yup):** Building forms easily and applying schema validations;
+- **[day.js][https://day.js.org/]:** Working with dates and times;
 - **[ESLint](https://eslint.org/):** Enforcing coding standards using the Airbnb rules;
 - **[Prettier](https://prettier.io/):** Formatting code with additional support for auto-ordering imports using @trivago/prettier-plugin-sort-imports;
 - **[Husky](https://typicode.github.io/husky/):** Setting up pre-commit hooks to run commitlint, lint, and prettier on staged files;
 - **[Storybook](https://storybook.js.org/):** Building a UI catalog to showcase and test UI components;
-- **[JSON-server](https://github.com/typicode/json-server):** For mocking REST APIs if necessary;
-- **[react-intl](https://formatjs.io/docs/react-intl/):** For internationalization;
+- **[JSON-server](https://github.com/typicode/json-server):** Mocking REST APIs;
+- **[react-intl](https://formatjs.io/docs/react-intl/):** Internationalization;
 - **Confirmation dialog and snackbar implementation with Context API:** 
 
 ## Getting Started

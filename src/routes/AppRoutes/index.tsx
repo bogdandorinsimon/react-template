@@ -1,47 +1,41 @@
-import { Suspense, lazy } from "react";
+import { ROUTER_PATH } from "helpers/constants";
+import { lazy } from "react";
 import { useLocation, useRoutes } from "react-router-dom";
-import ErrorBoundary from "layout/ErrorBoundary";
-import PrivateRoute from "routes/PrivateRoute";
+import { AuthLayout } from "layout/AuthLayout";
+import { ErrorBoundary } from "layout/ErrorBoundary";
+import { MainLayout } from "layout/MainLayout";
+import { AuthenticationRoute } from "routes/AuthenticationRoute";
+import { PrivateRoute } from "routes/PrivateRoute";
 
-const HomePage = lazy(() => import("features/home/HomePage"));
-const InventoryPage = lazy(() => import("features/inventory/InventoryPage"));
-const CarPage = lazy(() => import("features/inventory/CarPage"));
-const LeadsPage = lazy(() => import("features/leads/LeadsPage"));
-const CustomersPage = lazy(() => import("features/customers/CustomersPage"));
+const ProductsPage = lazy(() => import("features/products/ProductsPage"));
 const PageNotFound = lazy(() => import("routes/PageNotFound"));
 
-export const ROUTER_PATH = {
-  HOME: "/",
-  INVENTORY: "/inventory",
-  CAR: "/inventory/:carId",
-  LEADS: "/leads",
-  CUSTOMERS: "/customers",
-  NOT_FOUND: "*"
-};
-
-const AppRoutes = () => {
+export const AppRoutes = () => {
   const location = useLocation();
 
   const routes = useRoutes([
     {
-      path: ROUTER_PATH.HOME,
-      element: <HomePage />
+      element: <PrivateRoute />,
+      children: [
+        {
+          element: <MainLayout />,
+          children: [
+            {
+              path: ROUTER_PATH.PRODUCTS,
+              element: <ProductsPage />
+            }
+          ]
+        }
+      ]
     },
     {
-      path: ROUTER_PATH.INVENTORY,
-      element: <PrivateRoute component={<InventoryPage />} />
-    },
-    {
-      path: ROUTER_PATH.CAR,
-      element: <PrivateRoute component={<CarPage />} />
-    },
-    {
-      path: ROUTER_PATH.LEADS,
-      element: <PrivateRoute component={<LeadsPage />} />
-    },
-    {
-      path: ROUTER_PATH.CUSTOMERS,
-      element: <PrivateRoute component={<CustomersPage />} />
+      element: <AuthenticationRoute />,
+      children: [
+        {
+          element: <AuthLayout />,
+          children: []
+        }
+      ]
     },
     {
       path: ROUTER_PATH.NOT_FOUND,
@@ -49,11 +43,5 @@ const AppRoutes = () => {
     }
   ]);
 
-  return (
-    <Suspense>
-      <ErrorBoundary key={location.pathname}>{routes}</ErrorBoundary>
-    </Suspense>
-  );
+  return <ErrorBoundary key={location.pathname}>{routes}</ErrorBoundary>;
 };
-
-export default AppRoutes;

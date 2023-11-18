@@ -1,23 +1,24 @@
 import { SxProps } from "@mui/material";
+import { theme } from "theme/theme";
 
-const sxStyles = (): { [_: string]: SxProps } => ({
+const HEADER_HEIGHT = 74;
+
+export const sxStyles = (): { [_: string]: SxProps } => ({
+  appBar: {
+    zIndex: 3000,
+    bgcolor: theme.palette.white.main,
+    boxShadow: 0,
+    height: HEADER_HEIGHT
+  },
+  toolbar: {
+    height: "100%",
+    pl: 6
+  },
+  title: {
+    ml: 6
+  },
   container: {
-    paddingX: 3
-  },
-  logoText: {
-    mx: 2,
-    display: { xs: "none", md: "flex" },
-    fontWeight: 700,
-    letterSpacing: ".3rem",
-    color: "inherit",
-    textDecoration: "none",
-    cursor: "pointer"
-  },
-  pageButton: {
-    my: 2,
-    color: "white",
-    display: "block"
+    width: "100%",
+    height: "100%"
   }
 });
-
-export default sxStyles;

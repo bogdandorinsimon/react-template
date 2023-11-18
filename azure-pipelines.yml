@@ -1,0 +1,43 @@
+# Node.js with React
+# Build a Node.js project that uses React.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+trigger:
+  branches:
+    include:
+      - develop
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  - name: VITE_COGNITO_USER_POOL_ID
+    value: eu-west-1_GA4Pc02V5
+  - name: VITE_COGNITO_CLIENT_ID
+    value: 414elc2k8sk5vva53t4k2pv9om
+
+steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: "18.x"
+    displayName: "Install Node.js"
+
+  - script: |
+      npm install
+      VITE_COGNITO_USER_POOL_ID=$VITE_COGNITO_USER_POOL_ID VITE_COGNITO_CLIENT_ID=$VITE_COGNITO_CLIENT_ID npm run build
+    displayName: "npm install and build"
+  - task: CopyFiles@2
+    inputs:
+      SourceFolder: $(Build.SourcesDirectory)/dist
+      Contents: |
+        index.html
+        vite.svg
+        assets/**
+
+      TargetFolder: "$(Build.ArtifactStagingDirectory)"
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: "$(Build.ArtifactStagingDirectory)"
+      ArtifactName: "drop"
+      publishLocation: "Container"
