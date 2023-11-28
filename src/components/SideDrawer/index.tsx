@@ -14,7 +14,7 @@ export const SideDrawer = ({ open, onClose, content, title }: Props) => {
 
   const renderHeader = () => (
     <Stack sx={classes.header}>
-      <Typography variant="subtitle">{title}</Typography>
+      <Typography variant="h2">{title}</Typography>
       <IconButton onClick={onClose} size="small">
         <CustomIcon component={CloseIcon} color="black" />
       </IconButton>

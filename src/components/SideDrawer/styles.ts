@@ -1,9 +1,8 @@
-import { SxProps, Theme } from "@mui/material";
-import { theme } from "theme/theme";
+import { SxProps } from "@mui/material";
 
-const DRAWER_WIDTH = 728;
+const DRAWER_WIDTH = 568;
 
-export const sxStyles = (): { [_: string]: SxProps<Theme> } => ({
+export const sxStyles = (): { [_: string]: SxProps } => ({
   drawerContainer: {
     width: "100vw",
     height: "100vh",
@@ -14,8 +13,11 @@ export const sxStyles = (): { [_: string]: SxProps<Theme> } => ({
     p: 6
   },
   header: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
     px: 6,
-    py: 4,
-    boxShadow: ` 2px 0px 10px 0px ${theme.palette.black.main}`
+    py: 4
   }
 });
