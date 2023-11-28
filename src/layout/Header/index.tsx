@@ -16,16 +16,9 @@ export const Header = () => {
           alignItems="center"
           sx={classes.container}
         >
-          <Box
-            display="flex"
-            flexDirection="row"
-            justifyContent="row"
-            alignItems="center"
-          >
-            <Typography variant="h2" sx={classes.title} color="text.primary">
-              {pageTitle}
-            </Typography>
-          </Box>
+          <Typography variant="h2" sx={classes.title} color="text.primary">
+            {pageTitle}
+          </Typography>
         </Box>
       </Toolbar>
     </AppBar>
