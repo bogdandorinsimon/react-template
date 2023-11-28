@@ -30,6 +30,16 @@
     ],
     "react/jsx-props-no-spreading": "off",
     "react/react-in-jsx-scope": "off",
-    "react/require-default-props": "off"
+    "react/require-default-props": "off",
+    "react/style-prop-object": [
+      "error",
+      {
+        "allow": [
+          "FormattedNumber",
+          "FormattedDateParts",
+          "FormattedRelativeTime"
+        ]
+      }
+    ]
   }
 }
