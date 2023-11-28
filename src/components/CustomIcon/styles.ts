@@ -1,4 +1,4 @@
-import { SxProps, Theme } from "@mui/material";
+import { SxProps } from "@mui/material";
 
 type Props = {
   width: number;
@@ -8,7 +8,7 @@ type Props = {
 export const sxStyles = ({
   width,
   height
-}: Props): { [_: string]: SxProps<Theme> } => ({
+}: Props): { [_: string]: SxProps } => ({
   icon: {
     width,
     height
